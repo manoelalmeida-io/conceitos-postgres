@@ -38,5 +38,5 @@ Endereço(s) TCP/IP das interfaces que o servidor PostgreSQL vai escutar/liberar
 ## Configurações de memória
 * **SHARED_BUFFERS** -- Tamanho da memória compartilhada do servidor PostgreSQL para cache/buffer de tabelas, índices e demais relações.
 * **WORK_MEM** -- Tamanho de memória para operações de agrupamentos e ordenação (ORDER BY, DISTINCT, MERGE JOINS).
-* MAINTENANCE_WORK_MEM -- Tamanho da memória para operações como VACUUMM, INDEX, ALTER TABLE.
+* **MAINTENANCE_WORK_MEM** -- Tamanho da memória para operações como VACUUMM, INDEX, ALTER TABLE.
 
