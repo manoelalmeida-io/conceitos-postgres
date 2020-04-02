@@ -6,12 +6,12 @@
 ## postgresql.conf
 Ao acessar a view pg_settings, é possível visualizar todas as configurações atuais.
 
-```postgresql
+```sql
 SELECT name, setting FROM pg_settings
 ```
 
 Ou é possível usar o commando `SHOW [parâmetro]`. Ex:
-```postgresql
+```sql
 SHOW ALL -- Mostra os valores de todos os parâmetros de configuração.
 ```
 
