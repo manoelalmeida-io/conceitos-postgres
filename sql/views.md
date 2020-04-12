@@ -95,6 +95,21 @@ CREATE OR REPLACE RECURSIVE VIEW vw_funcionarios(id, gerente, funcionario) AS (
 SELECT id, gerente, funcionario FROM vw_funcionarios;
 ```
 
+```sql
+CREATE OR REPLACE RECURSIVE VIEW vw_funcionarios(id, gerente, funcionario) AS (
+  SELECT id, CAST('' AS VARCHAR(50)) AS gerente, nome
+  FROM funcionarios
+  WHERE gerente IS NULL
+  UNION ALL
+  SELECT funcionarios.id, gerentes.nome, funcionarios.nome
+  FROM funcionarios
+  JOIN vw_funcionarios ON vw_funcionarios.id = funcionarios.gerente
+  JOIN funcionarios gerentes ON gerentes.id = vw_funcionarios.id 
+);
+
+SELECT id, gerente, funcionario FROM vw_funcionarios;
+```
+
 ## WITH OPTIONS
 ```sql
 CREATE OR REPLACE VIEW vw_banco AS (
